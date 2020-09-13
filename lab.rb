@@ -2,16 +2,16 @@
 class Lab < Formula
   desc "A cli tool with gitlab."
   homepage "https://github.com/Ackerr/lab"
-  version "0.0.6"
+  version "0.0.7"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/Ackerr/lab/releases/download/v0.0.6/lab_Darwin_x86_64.tar.gz"
-    sha256 "ad570500a5efb44c1810ad5e3a4fe3394bb458ddc35714d766d1fe35dc085002"
+    url "https://github.com/Ackerr/lab/releases/download/v0.0.7/lab_Darwin_x86_64.tar.gz"
+    sha256 "b6b8ad61dd7e4b78a05366c0e25b920ae4299534b0f04cb50aba9ea89979fe54"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/Ackerr/lab/releases/download/v0.0.6/lab_Linux_x86_64.tar.gz"
-      sha256 "83b1f746e1945d12f6b012f733565658690932174758e3da2ee3fcc0f27f16e4"
+      url "https://github.com/Ackerr/lab/releases/download/v0.0.7/lab_Linux_x86_64.tar.gz"
+      sha256 "3668f80b7bd6d8bd4fff089ab15d725140bf7b6bd911b7a168ae13f1edaa1942"
     end
   end
 
