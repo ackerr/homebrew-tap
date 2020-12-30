@@ -2,20 +2,20 @@
 class Lab < Formula
   desc "A cli tool with gitlab."
   homepage "https://github.com/Ackerr/lab"
-  version "0.2.18"
+  version "0.2.19"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/Ackerr/lab/releases/download/v0.2.18/lab_Darwin_x86_64.tar.gz"
-    sha256 "6286949c89ad0b10eb87c0642be1346409f64218a10c32cd3cd74603edc24160"
+    url "https://github.com/Ackerr/lab/releases/download/v0.2.19/lab_Darwin_x86_64.tar.gz"
+    sha256 "98ecbe730708cbdf9fd0adafaa0ecd44bfca91075791df3a30c0db4048b492f1"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/Ackerr/lab/releases/download/v0.2.18/lab_Linux_x86_64.tar.gz"
-    sha256 "e9b3febc42f308f5ebcd21484881925780489bf984ab76e025fa6ef77afe4678"
+    url "https://github.com/Ackerr/lab/releases/download/v0.2.19/lab_Linux_x86_64.tar.gz"
+    sha256 "1386905d957ba879f0ea3574d41a6668caec6e4e2df30ab9f8428d9cbd104343"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/Ackerr/lab/releases/download/v0.2.18/lab_Linux_arm64.tar.gz"
-    sha256 "d91bae776529e67f3f61fa59a251811197162d8eefc741213999f6fc08e86a48"
+    url "https://github.com/Ackerr/lab/releases/download/v0.2.19/lab_Linux_arm64.tar.gz"
+    sha256 "44723b014544c0c49fc00a3897c9420090b316f11f52d666f8c16bf384bb516a"
   end
 
   def install
