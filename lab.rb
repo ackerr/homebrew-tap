@@ -5,31 +5,39 @@
 class Lab < Formula
   desc "A cli tool with gitlab."
   homepage "https://github.com/Ackerr/lab"
-  version "0.3.1"
+  version "0.4.2"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/ackerr/lab/releases/download/v0.3.1/lab_Darwin_x86_64.tar.gz"
-      sha256 "547ff8c3ad28bca8198576e79ad34e97537eb1bad89bf856c2b6fea153fcdc01"
+    url "https://github.com/ackerr/lab/releases/download/v0.4.2/lab_Darwin_x86_64.tar.gz"
+    sha256 "d090862176b12cb7877f33d64a0b4c1cfd2431409663c0df07022075e17d4660"
 
-      def install
-        bin.install "lab"
+    def install
+      bin.install "lab"
+    end
+
+    if Hardware::CPU.arm?
+      def caveats
+        <<~EOS
+          The darwin_arm64 architecture is not supported for the Lab
+          formula at this time. The darwin_amd64 binary may work in compatibility
+          mode, but it might not be fully supported.
+        EOS
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/ackerr/lab/releases/download/v0.3.1/lab_Linux_arm.tar.gz"
-      sha256 "cd22425f3a9ab809f983b7e91c9fd45f8a61d1ba2eb9fbbce387bd0b0a924c42"
+      url "https://github.com/ackerr/lab/releases/download/v0.4.2/lab_Linux_arm.tar.gz"
+      sha256 "c4cef10ff70e8c5f5a4de7ce4c5319b4adeafd498a043fd097792bd1ef55ad09"
 
       def install
         bin.install "lab"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/ackerr/lab/releases/download/v0.3.1/lab_Linux_x86_64.tar.gz"
-      sha256 "a61c24d6ce29f16ab1e9f5c59b0137cb7bbdaa79e70103a7ff0351439e0f3103"
+      url "https://github.com/ackerr/lab/releases/download/v0.4.2/lab_Linux_x86_64.tar.gz"
+      sha256 "7de2cf8fd36b9a9d10e1bb74d5fdf7944b353b417fd7b6ddeea75b57e63e57ae"
 
       def install
         bin.install "lab"
